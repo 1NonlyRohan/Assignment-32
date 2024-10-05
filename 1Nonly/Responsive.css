@@ -1,0 +1,50 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .input-groups input {
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    thead th {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .input-groups input {
+        padding: 6px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    table,
+    thead th {
+        font-size: 0.8rem;
+    }
+}

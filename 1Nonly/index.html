@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingNest_Assignment_No.32</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Responsive.css.css">
+</head>
+<body>
+    <!-- Starting Area -->
+    <div class="container">
+        <div class="form-box">
+            <h2>Add New Student</h2>
+            <form id="form-box">
+                <!-- Input Area -->
+                <div class="input-groups">
+                    <label for="roll">Roll No</label>
+                    <input type="text" id="rollno" name="roll" placeholder="Roll No">
+                </div>
+                <div class="input-groups">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="input-groups">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" placeholder="Age">
+                </div>
+                <button type="submit" class="btn" id="btn">Add New Student</button>
+            </form>
+        </div>
+        <!-- list of students -->
+        <div class="student-list">
+            <h2>CodingNest Students List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="student-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+
+</html>
