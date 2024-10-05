@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingNest_Assignment_No.32</title>
+    <!-- Styling Area -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .form-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .input-groups {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-groups label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-groups input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .student-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        thead th {
+            padding: 10px;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        tbody td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .input-groups input {
+                padding: 8px;
+                font-size: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 1.1rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            thead th {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .input-groups input {
+                padding: 6px;
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px;
+                font-size: 1rem;
+            }
+
+            table,
+            thead th {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Starting Area -->
+    <div class="container">
+        <div class="form-box">
+            <h2>Add New Student</h2>
+            <form id="form-box">
+                <!-- Input Area -->
+                <div class="input-groups">
+                    <label for="roll">Roll No</label>
+                    <input type="text" id="rollno" name="roll" placeholder="Roll No">
+                </div>
+                <div class="input-groups">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name">
+                </div>
+                <div class="input-groups">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" placeholder="Age">
+                </div>
+                <button type="submit" class="btn" id="btn">Add New Student</button>
+            </form>
+        </div>
+        <!-- list of students -->
+        <div class="student-list">
+            <h2>CodingNest Students List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody id="student-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var button = document.getElementById("btn");
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            // input values
+            var rollNo = document.getElementById("rollno").value;
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            // conditions
+            if (!rollNo) {
+                alert("Please enter your Roll no.")
+            }
+            if (!name) {
+                alert("Please enter your Name")
+            }
+            if (!age) {
+                alert("Please enter your Age")
+            }
+            else {
+                // Create new table row and cells
+                var newDataRow = document.createElement("tr");
+                var rollNoCell = document.createElement('td');
+                var nameCell = document.createElement('td');
+                var ageCell = document.createElement('td');
+
+                // Set content of cell
+                rollNoCell.innerText = rollNo;
+                nameCell.innerText = name;
+                ageCell.innerText = age;
+                // Append childs
+                newDataRow.appendChild(rollNoCell);
+                newDataRow.appendChild(nameCell);
+                newDataRow.appendChild(ageCell);
+                // student body data
+                var studentTbody = document.getElementById("student-tbody");
+                studentTbody.appendChild(newDataRow);
+                // Reset submittion
+                document.getElementById("form-box").reset();
+            }
+        });
+    </script>
+</body>
+
+</html>
